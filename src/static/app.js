@@ -25,6 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeLoginModal = document.querySelector(".close-login-modal");
   const loginMessage = document.getElementById("login-message");
 
+  // Announcement banner element
+  const announcementBanner = document.querySelector(".announcement-banner");
+  const announcementClose = document.querySelector(".announcement-close");
+
   // Activity categories with corresponding colors
   const activityTypes = {
     sports: { label: "Sports", color: "#e8f5e9", textColor: "#2e7d32" },
@@ -666,6 +670,15 @@ document.addEventListener("DOMContentLoaded", () => {
     "click",
     closeRegistrationModalHandler
   );
+
+  // Event listener for announcement close button
+  if (announcementClose) {
+    announcementClose.addEventListener("click", () => {
+      if (announcementBanner) {
+        announcementBanner.style.display = "none";
+      }
+    });
+  }
 
   // Close modal when clicking outside of it
   window.addEventListener("click", (event) => {
